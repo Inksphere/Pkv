@@ -1,0 +1,129 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Main Application Layout */
+.app-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+}
+
+.editor-panel, .preview-panel {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Important for padding */
+}
+
+#download-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* POSTER TEMPLATE STYLES */
+#poster-canvas {
+    width: 400px;
+    height: 600px;
+    border: 2px solid #ddd;
+    background-color: #ffffff;
+    margin: 0 auto; /* Center the poster in the preview panel */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Impact', 'Arial Black', sans-serif; /* A bold, poster-like font */
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Ensures nothing spills out */
+}
+
+.poster-header {
+    background-color: #e63946;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.poster-image-container {
+    width: 100%;
+    height: 350px; /* Fixed height for the image area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1faee;
+}
+
+#poster-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* This makes the image cover the area without distortion */
+}
+
+.poster-content {
+    background-color: #1d3557;
+    padding: 20px;
+    flex-grow: 1; /* Takes up the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#poster-name {
+    font-size: 36px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+#poster-text {
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif; /* A more readable font for body text */
+}
