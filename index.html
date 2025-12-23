@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Poster Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- We add the html2canvas library from a CDN to enable downloading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Poster Maker</h1>
+        <p>Customize your poster using the template below.</p>
+    </header>
+
+    <main class="app-container">
+        <!-- Editor Panel -->
+        <section class="editor-panel">
+            <h2>Customize Your Poster</h2>
+            <form id="poster-form">
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input type="text" id="name-input" placeholder="Enter a name">
+                </div>
+
+                <div class="form-group">
+                    <label for="number-input">Number</label>
+                    <input type="text" id="number-input" placeholder="Enter a number (e.g., #25)">
+                </div>
+
+                <div class="form-group">
+                    <label for="text-input">Main Text</label>
+                    <textarea id="text-input" rows="4" placeholder="Enter your main message or slogan"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="image-upload">Upload Image</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+
+                <button type="button" id="download-btn">Download Poster as Image</button>
+            </form>
+        </section>
+
+        <!-- Live Preview Panel -->
+        <section class="preview-panel">
+            <h2>Live Preview</h2>
+            <div id="poster-canvas">
+                <div class="poster-header">
+                    <span id="poster-number">#00</span>
+                </div>
+                <div class="poster-image-container">
+                    <!-- The image will be placed here -->
+                    <img id="poster-image" src="https://via.placeholder.com/400x250.png?text=Your+Image+Here" alt="Poster Image">
+                </div>
+                <div class="poster-content">
+                    <h3 id="poster-name">Your Name Here</h3>
+                    <p id="poster-text">Your main text will appear here. It can be a short sentence or a powerful quote.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
