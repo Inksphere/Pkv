@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AHSAN | PKV </title>
+<title>Developed by Hashim Mohamed KP</title>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="./favicon 1.jpg" type="image/png">
+<style>
 :root {
 --primary-color: #1a365d;
 --primary-light: #2c5282;
@@ -517,7 +530,7 @@ font-weight: 500;
 color: rgb(86, 235, 102);
 text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 margin: 0;
-font-size: 24.8px;
+font-size: 30;
 }
 
 .card-month {
@@ -530,7 +543,7 @@ font-weight: 500;
 color: rgb(86, 235, 102);
 text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 margin: 0;
-font-size: 24.8px;
+font-size: 30;
 }
 
 .card-year {
@@ -543,7 +556,7 @@ font-weight: 500;
 color: rgb(86, 235, 102);
 text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 margin: 0;
-font-size: 24.8px;
+font-size: 30;
 }
 
 .card-number {
@@ -968,3 +981,1484 @@ color: var(--text-secondary);
 font-weight: 600;
 font-size: 1.1em;
 }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="header-content">
+<button class="home-btn" onclick="goHome()">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</button>
+<h1> Photo Card Generator</h1>
+<p>Create stunning photo cards for AHSAN | PKV - Al Hidaya Students' Association</p>
+</div>
+</div>
+
+<div class="form-container">
+<div class="form-header">
+<div class="form-icon">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+<circle cx="12" cy="13" r="4"></circle>
+</svg>
+</div>
+<h2>Card Information</h2>
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+Name
+</label>
+<textarea id="nameInput" placeholder="Enter name here..."></textarea>
+</div>
+
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+<line x1="9" y1="9" x2="15" y2="9"></line>
+<line x1="9" y1="15" x2="15" y2="15"></line>
+</svg>
+Time
+</label>
+<select id="timeInput">
+<option value="1:30">1:30</option>
+<option value="4:30">4:30</option>
+<option value="9:00">9:00</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+<line x1="9" y1="9" x2="15" y2="9"></line>
+<line x1="9" y1="15" x2="15" y2="15"></line>
+</svg>
+Month
+</label>
+<select id="monthInput">
+<option value="January">January</option>
+<option value="February">February</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="October">October</option>
+<option value="November">November</option>
+<option value="December">December</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+<line x1="9" y1="9" x2="15" y2="9"></line>
+<line x1="9" y1="15" x2="15" y2="15"></line>
+</svg>
+Year
+</label>
+<select id="yearInput">
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+<line x1="16" y1="2" x2="16" y2="6"></line>
+<line x1="8" y1="2" x2="8" y2="6"></line>
+<line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+Number (Day)
+</label>
+<input type="text" id="numberInput" placeholder="Enter day number..." value="">
+</div>
+
+<div class="form-group">
+<label>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+<circle cx="8.5" cy="8.5" r="1.5"></circle>
+<polyline points="21 15 16 10 5 21"></polyline>
+</svg>
+Upload Photo
+</label>
+<input type="file" id="photoInput" accept="image/*">
+</div>
+</div>
+
+<div class="button-group">
+<button class="action-btn btn-png" onclick="downloadPNG()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+Download PNG
+</button>
+<button class="action-btn btn-jpg" onclick="downloadJPG()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+Download JPG
+</button>
+<button class="action-btn btn-pdf" onclick="downloadPDF()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+Download PDF
+</button>
+<button class="action-btn btn-edit" onclick="openEditModal()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+</svg>
+Customize
+</button>
+<button class="action-btn btn-share" onclick="openShareModal()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+</svg>
+Share
+</button>
+</div>
+</div>
+
+<div class="card-preview">
+<div class="preview-label">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="12" cy="12" r="10"></circle>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+Live Card Preview
+</div>
+<div class="card-wrapper">
+<div id="photoCard">
+<div class="template-layer" id="templateLayer"></div>
+<div class="big-photo-layer" id="bigPhotoLayer">
+<div class="big-photo-placeholder" id="bigPhotoPlaceholder">Big Photo Area</div>
+<img class="big-photo-image" id="bigPhotoImage" src="template.jpg" style="display: block;">
+</div>
+<div class="content-wrapper" id="contentWrapper">
+<div class="photo-container card-element" id="photoContainer">
+<div class="photo-placeholder" id="photoPlaceholder">Upload Photo</div>
+<img id="photoImg" style="display: none;">
+</div>
+<div class="card-name card-element" id="cardName">
+<p class="name-text">MINHAJ PADIKKAL</p>
+</div>
+<div class="card-subtitle card-element" id="cardSubtitle">
+<p class="subtitle-text">1:30</p>
+</div>
+<div class="card-month card-element" id="cardMonth">
+<p class="month-text">January</p>
+</div>
+<div class="card-year card-element" id="cardYear">
+<p class="year-text">2024</p>
+</div>
+<div class="card-number card-element" id="cardNumber">
+<p class="number-text">26</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal" id="editModal">
+<div class="modal-content">
+<div class="modal-left">
+<h2>Customize Card</h2>
+
+<div class="edit-section">
+<h3>🎨 Template Settings</h3>
+<div class="edit-control">
+<label>Hue: <span class="range-value" id="templateHueValue">0°</span></label>
+<input type="range" id="templateHue" min="0" max="360" value="0" oninput="updateTemplateHue(this.value)">
+</div>
+<div class="edit-control">
+<label>Background Color:</label>
+<select id="bgColorSelect" onchange="updateBackgroundColor(this.value)">
+<option value="#8B1F2C">Dark Red</option>
+<option value="#1a365d">Dark Blue</option>
+<option value="#1a4d2e">Dark Green</option>
+<option value="#5d1a3a">Dark Purple</option>
+<option value="#ffffff">White</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>👤 Name Settings</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="nameWidthValue">222px</span></label>
+<input type="range" id="nameWidth" min="100" max="800" value="222" oninput="updateNameWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="nameHeightValue">81px</span></label>
+<input type="range" id="nameHeight" min="20" max="200" value="81" oninput="updateNameHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="namePosXValue">464px</span></label>
+<input type="range" id="namePosX" min="0" max="1080" value="440" oninput="updateNamePosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="namePosYValue">966px</span></label>
+<input type="range" id="namePosY" min="0" max="1350" value="928" oninput="updateNamePosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Font Size: <span class="range-value" id="nameFontSizeValue">60px</span></label>
+<input type="range" id="nameFontSize" min="10" max="80" value="40" oninput="updateNameFontSize(this.value)">
+</div>
+<div class="edit-control">
+<label>Font Family:</label>
+<select id="nameFont" onchange="updateNameFont(this.value)">
+<option value="'Space Grotesk', sans-serif" selected>Space Grotesk</option>
+<option value="'Inter', sans-serif">Inter</option>
+<option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans</option>
+<option value="'Barlow', sans-serif">Barlow</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>📝 Time Settings</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="subtitleWidthValue">130px</span></label>
+<input type="range" id="subtitleWidth" min="100" max="800" value="130" oninput="updateSubtitleWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="subtitleHeightValue">43px</span></label>
+<input type="range" id="subtitleHeight" min="20" max="200" value="43" oninput="updateSubtitleHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="subtitlePosXValue">366px</span></label>
+<input type="range" id="subtitlePosX" min="0" max="1080" value="366" oninput="updateSubtitlePosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="subtitlePosYValue">px</span></label>
+<input type="range" id="subtitlePosY" min="0" max="1350" value="500" oninput="updateSubtitlePosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Font Size: <span class="range-value" id="subtitleFontSizeValue">30</span></label>
+<input type="range" id="subtitleFontSize" min="10" max="60" value="24.8" oninput="updateSubtitleFontSize(this.value)">
+</div>
+<div class="edit-control">
+<label>Font Family:</label>
+<select id="subtitleFont" onchange="updateSubtitleFont(this.value)">
+<option value="'Poppins', sans-serif" selected>Poppins</option>
+<option value="'Inter', sans-serif">Inter</option>
+<option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+<option value="'Barlow', sans-serif">Barlow</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>📅 Month Settings</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="monthWidthValue">130px</span></label>
+<input type="range" id="monthWidth" min="100" max="800" value="130" oninput="updateMonthWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="monthHeightValue">43px</span></label>
+<input type="range" id="monthHeight" min="20" max="200" value="43" oninput="updateMonthHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="monthPosXValue">545px</span></label>
+<input type="range" id="monthPosX" min="0" max="1080" value="545" oninput="updateMonthPosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="monthPosYValue">1080px</span></label>
+<input type="range" id="monthPosY" min="0" max="1350" value="1080" oninput="updateMonthPosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Font Size: <span class="range-value" id="monthFontSizeValue">30</span></label>
+<input type="range" id="monthFontSize" min="10" max="60" value="24.8" oninput="updateMonthFontSize(this.value)">
+</div>
+<div class="edit-control">
+<label>Font Family:</label>
+<select id="monthFont" onchange="updateMonthFont(this.value)">
+<option value="'Poppins', sans-serif" selected>Poppins</option>
+<option value="'Inter', sans-serif">Inter</option>
+<option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+<option value="'Barlow', sans-serif">Barlow</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>📆 Year Settings</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="yearWidthValue">130px</span></label>
+<input type="range" id="yearWidth" min="100" max="800" value="130" oninput="updateYearWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="yearHeightValue">43px</span></label>
+<input type="range" id="yearHeight" min="20" max="200" value="43" oninput="updateYearHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="yearPosXValue">366px</span></label>
+<input type="range" id="yearPosX" min="0" max="1080" value="366" oninput="updateYearPosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="yearPosYValue">1076pxp</span></label>
+<input type="range" id="yearPosY" min="0" max="1350" value="1076" oninput="updateYearPosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Font Size: <span class="range-value" id="yearFontSizeValue">30</span></label>
+<input type="range" id="yearFontSize" min="10" max="60" value="24.8" oninput="updateYearFontSize(this.value)">
+</div>
+<div class="edit-control">
+<label>Font Family:</label>
+<select id="yearFont" onchange="updateYearFont(this.value)">
+<option value="'Poppins', sans-serif" selected>Poppins</option>
+<option value="'Inter', sans-serif">Inter</option>
+<option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+<option value="'Barlow', sans-serif">Barlow</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>🔢 Number Settings</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="numberWidthValue">85.62px</span></label>
+<input type="range" id="numberWidth" min="50" max="200" value="86" oninput="updateNumberWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="numberHeightValue">100.16px</span></label>
+<input type="range" id="numberHeight" min="50" max="200" value="100" oninput="updateNumberHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="numberPosXValue">464.66px</span></label>
+<input type="range" id="numberPosX" min="0" max="1080" value="464.66" oninput="updateNumberPosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="numberPosYValue">1075px</span></label>
+<input type="range" id="numberPosY" min="0" max="1350" value="1075" oninput="updateNumberPosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Font Size: <span class="range-value" id="numberFontSizeValue">60px</span></label>
+<input type="range" id="numberFontSize" min="10" max="80" value="60" oninput="updateNumberFontSize(this.value)">
+</div>
+<div class="edit-control">
+<label>Font Family:</label>
+<select id="numberFont" onchange="updateNumberFont(this.value)">
+<option value="'Plus Jakarta Sans', sans-serif" selected>Plus Jakarta Sans</option>
+<option value="'Inter', sans-serif">Inter</option>
+<option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+<option value="'Barlow', sans-serif">Barlow</option>
+</select>
+</div>
+</div>
+
+<div class="edit-section">
+<h3>🖼️ Photo Frame</h3>
+<div class="edit-control">
+<label>Width: <span class="range-value" id="photoWidthValue">318px</span></label>
+<input type="range" id="photoWidth" min="100" max="600" value="318" oninput="updatePhotoWidth(this.value)">
+</div>
+<div class="edit-control">
+<label>Height: <span class="range-value" id="photoHeightValue">357px</span></label>
+<input type="range" id="photoHeight" min="100" max="600" value="357" oninput="updatePhotoHeight(this.value)">
+</div>
+<div class="edit-control">
+<label>Position X: <span class="range-value" id="photoPosXValue">392px</span></label>
+<input type="range" id="photoPosX" min="0" max="1080" value="392" oninput="updatePhotoPosition(this.value, 'x')">
+</div>
+<div class="edit-control">
+<label>Position Y: <span class="range-value" id="photoPosYValue">582px</span></label>
+<input type="range" id="photoPosY" min="0" max="1350" value="598" oninput="updatePhotoPosition(this.value, 'y')">
+</div>
+<div class="edit-control">
+<label>Border Radius: <span class="range-value" id="photoRadiusValue">10px</span></label>
+<input type="range" id="photoRadius" min="0" max="100" value="10" oninput="updatePhotoRadius(this.value)">
+</div>
+</div>
+
+<div class="modal-buttons">
+<button class="modal-btn modal-btn-undo" onclick="undoChanges()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M3 7v6h6"></path>
+<path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"></path>
+</svg>
+Undo
+</button>
+<button class="modal-btn modal-btn-reset" onclick="resetToDefaults()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M1 4v6h6"></path>
+<path d="M23 20a9 9 0 01-9-9 9 9 0 00-9-9 9 9 0 00-6 2.3L1 10"></path>
+</svg>
+Reset
+</button>
+<button class="modal-btn modal-btn-cancel" onclick="cancelEditModal()">✕ Cancel</button>
+<button class="modal-btn modal-btn-save" onclick="closeEditModal()">✓ Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal" id="shareModal">
+<div class="share-modal-content">
+<h2>📤 Share Your Card</h2>
+<p>Download and share your beautiful photo card</p>
+
+<div class="rename-section">
+<input type="text" id="renameInput" class="rename-input" placeholder="Enter custom filename (optional)">
+</div>
+
+<div class="share-options">
+<button class="share-btn" onclick="shareAsPNG()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+PNG Image
+</button>
+<button class="share-btn" onclick="shareAsJPG()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+JPG Image
+</button>
+<button class="share-btn" onclick="copyToClipboard()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+<rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+</svg>
+Copy to Clipboard
+</button>
+<button class="share-btn" onclick="shareOnWhatsApp()">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+</svg>
+WhatsApp
+</button>
+<button class="share-btn" onclick="shareOnTelegram()">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+</svg>
+Telegram
+</button>
+</div>
+
+<div class="modal-buttons">
+<button class="modal-btn modal-btn-cancel" onclick="closeShareModal()" style="width: 100%;">Close</button>
+</div>
+</div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading" id="loading">
+<div class="spinner"></div>
+<p>Generating your card...</p>
+</div>
+
+<script>
+/*  =============  ROBUST CANVAS HELPER  =============  */
+async function generateCardCanvas(){
+    return new Promise(async(resolve,reject)=>{
+        showLoading();
+
+        /* ---- 1.  read live hue ---- */
+        const hue = parseInt(document.getElementById('templateHue').value) || 0;
+
+        /* ---- 2.  clone card ---- */
+        const clone = photoCard.cloneNode(true);
+
+        /* ---- 3.  apply styles to clone ---- */
+        clone.style.backgroundColor = bgColorSelect.value;
+
+        /* ---- 4.  off-screen box ---- */
+        const box = document.createElement('div');
+        box.style.position = 'fixed';
+        box.style.top  = '-9999px';
+        box.style.left = '-9999px';
+        box.style.width  = '1080px';
+        box.style.height = '1350px';
+        box.style.overflow = 'hidden';
+        box.appendChild(clone);
+        document.body.appendChild(box);
+
+        /* ---- 5.  wait for images ---- */
+        const imgs = Array.from(clone.querySelectorAll('img'));
+        await Promise.all(imgs.map(img =>
+            img.complete ? Promise.resolve()
+                         : new Promise(res => { img.onload = img.onerror = () => res(); setTimeout(res, 3000); })
+        ));
+
+        /* ---- 6.  render to canvas ---- */
+        try{
+            const canvas = await html2canvas(clone,{
+                width:1080, height:1350, scale:2,
+                backgroundColor:bgColorSelect.value,
+                useCORS:true, 
+                allowTaint:false, 
+                logging:false
+            });
+            
+            /* ---- 7. Apply hue rotation to the canvas if needed ---- */
+            if (hue !== 0) {
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = canvas.width;
+                tempCanvas.height = canvas.height;
+                const ctx = tempCanvas.getContext('2d');
+                
+                // Apply hue rotation filter
+                ctx.filter = `hue-rotate(${hue}deg)`;
+                ctx.drawImage(canvas, 0, 0);
+                
+                document.body.removeChild(box);
+                hideLoading();
+                resolve(tempCanvas);
+            } else {
+                document.body.removeChild(box);
+                hideLoading();
+                resolve(canvas);
+            }
+        }catch(err){
+            document.body.removeChild(box);
+            hideLoading();
+            reject(err);
+        }
+    });
+}
+/*  =============  END ROBUST HELPER  =============  */
+
+/* ................................................... */
+/* Original variables / dom refs – unchanged            */
+/* ................................................... */
+const nameInput=document.getElementById('nameInput');
+const timeInput=document.getElementById('timeInput');
+const monthInput=document.getElementById('monthInput');
+const yearInput=document.getElementById('yearInput');
+const numberInput=document.getElementById('numberInput');
+const photoInput=document.getElementById('photoInput');
+const renameInput=document.getElementById('renameInput');
+const bgColorSelect=document.getElementById('bgColorSelect');
+const cardName=document.getElementById('cardName');
+const cardSubtitle=document.getElementById('cardSubtitle');
+const cardMonth=document.getElementById('cardMonth');
+const cardYear=document.getElementById('cardYear');
+const cardNumber=document.getElementById('cardNumber');
+const photoContainer=document.getElementById('photoContainer');
+const photoPlaceholder=document.getElementById('photoPlaceholder');
+const photoImg=document.getElementById('photoImg');
+const templateLayer=document.getElementById('templateLayer');
+const bigPhotoLayer=document.getElementById('bigPhotoLayer');
+const bigPhotoImage=document.getElementById('bigPhotoImage');
+const bigPhotoPlaceholder=document.getElementById('bigPhotoPlaceholder');
+const contentWrapper=document.getElementById('contentWrapper');
+const photoCard=document.getElementById('photoCard');
+
+/*  history / defaults  */
+let history=[];
+let historyIndex=-1;
+let originalValues={
+name: "",
+time: "1:30",
+month: "January",
+year: "2024",
+number: "",
+nameWidth: 222,
+nameHeight: 81,
+namePosX: 464,
+namePosY: 958,
+nameFontSize: 55,
+nameFont: "'Poppins', sans-serif",
+subtitleWidth: 130,
+subtitleHeight: 43,
+subtitlePosX: 364,
+subtitlePosY: 1076,
+subtitleFontSize: 30,
+subtitleFont: "'Poppins', sans-serif",
+monthWidth: 130,
+monthHeight: 43,
+monthPosX: 565,
+monthPosY: 1076,
+monthFontSize: 30,
+monthFont: "'Poppins', sans-serif",
+yearWidth: 130,
+yearHeight: 43,
+yearPosX: 545,
+yearPosY: 1110,
+yearFontSize: 30,
+yearFont: "'Poppins', sans-serif",
+numberWidth: 85.62,
+numberHeight: 100.16,
+numberPosX: 465,
+numberPosY: 1078,
+numberFontSize: 62,
+numberFont: "'Plus Jakarta Sans', sans-serif",
+photoWidth: 318,
+photoHeight: 357,
+photoPosX: 392,
+photoPosY: 598,
+photoRadius: 10,
+templateHue: 0,
+bgColor: '#8B1F2C'
+};
+
+/*  tiny helpers  */
+function showLoading(){document.getElementById('loading').classList.add('active');}
+function hideLoading(){document.getElementById('loading').classList.remove('active');}
+function getFilename(ext){
+    const c=renameInput.value.trim();
+    const t=new Date().getTime();
+    return c?`${c}.${ext}`:`photo-card-${t}.${ext}`;
+}
+
+/*  =============  DOWNLOAD FUNCTIONS  =============  */
+async function downloadPNG(){
+    try{
+        const canvas=await generateCardCanvas();
+        canvas.toBlob(blob=>{
+            if(!blob)return alert('Canvas empty');
+            const u=URL.createObjectURL(blob);
+            const a=document.createElement('a');
+            a.download=getFilename('png');
+            a.href=u;
+            a.click();
+            URL.revokeObjectURL(u);
+        },'image/png');
+    }catch(e){console.error(e);alert('PNG failed');}
+}
+async function downloadJPG(){
+    try{
+        const canvas=await generateCardCanvas();
+        canvas.toBlob(blob=>{
+            if(!blob)return alert('Canvas empty');
+            const u=URL.createObjectURL(blob);
+            const a=document.createElement('a');
+            a.download=getFilename('jpg');
+            a.href=u;
+            a.click();
+            URL.revokeObjectURL(u);
+        },'image/jpeg',0.95);
+    }catch(e){console.error(e);alert('JPG failed');}
+}
+async function downloadPDF(){
+    try{
+        const canvas=await generateCardCanvas();
+        const imgData=canvas.toDataURL('image/jpeg',0.95);
+        const {jsPDF}=window.jspdf;
+        const pdf=new jsPDF({orientation:'portrait',unit:'px',format:[1080,1350]});
+        pdf.addImage(imgData,'JPEG',0,0,1080,1350);
+        pdf.save(getFilename('pdf'));
+    }catch(e){console.error(e);alert('PDF failed');}
+}
+
+/*  =============  SHARE FUNCTIONS  =============  */
+async function shareAsPNG(){await downloadPNG();}
+async function shareAsJPG(){await downloadJPG();}
+async function copyToClipboard(){
+    try{
+        const canvas=await generateCardCanvas();
+        canvas.toBlob(async blob=>{
+            try{
+                await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+                alert('✓ Copied – paste anywhere!');
+            }catch{alert('Copy unavailable – download instead');}
+        });
+    }catch{alert('Copy failed');}
+}
+async function shareOnWhatsApp(){
+    try{
+        const canvas=await generateCardCanvas();
+        canvas.toBlob(async blob=>{
+            const file=new File([blob],getFilename('png'),{type:'image/png'});
+            if(navigator.share&&navigator.canShare({files:[file]})){
+                await navigator.share({files:[file],title:'Photo Card',text:'Check out this photo card!'});
+            }else{
+                const u=URL.createObjectURL(blob);
+                const a=document.createElement('a');
+                a.download=getFilename('png');
+                a.href=u;
+                a.click();
+                URL.revokeObjectURL(u);
+                alert('✓ Downloaded – share via WhatsApp from gallery');
+            }
+        });
+    }catch{alert('Share failed');}
+}
+async function shareOnTelegram(){
+    try{
+        const canvas=await generateCardCanvas();
+        canvas.toBlob(async blob=>{
+            const file=new File([blob],getFilename('png'),{type:'image/png'});
+            if(navigator.share&&navigator.canShare({files:[file]})){
+                await navigator.share({files:[file],title:'Photo Card',text:'Check out this photo card!'});
+            }else{
+                const u=URL.createObjectURL(blob);
+                const a=document.createElement('a');
+                a.download=getFilename('png');
+                a.href=u;
+                a.click();
+                URL.revokeObjectURL(u);
+                alert('✓ Downloaded – share via Telegram from gallery');
+            }
+        });
+    }catch{alert('Share failed');}
+}
+
+// Save current state to history
+function saveState() {
+history = history.slice(0, historyIndex + 1);
+const currentState = {
+name: nameInput.value,
+time: timeInput.value,
+month: monthInput.value,
+year: yearInput.value,
+number: numberInput.value,
+nameWidth: parseInt(document.getElementById('nameWidth').value),
+nameHeight: parseInt(document.getElementById('nameHeight').value),
+namePosX: parseInt(document.getElementById('namePosX').value),
+namePosY: parseInt(document.getElementById('namePosY').value),
+nameFontSize: parseInt(document.getElementById('nameFontSize').value),
+nameFont: document.getElementById('nameFont').value,
+subtitleWidth: parseInt(document.getElementById('subtitleWidth').value),
+subtitleHeight: parseInt(document.getElementById('subtitleHeight').value),
+subtitlePosX: parseInt(document.getElementById('subtitlePosX').value),
+subtitlePosY: parseInt(document.getElementById('subtitlePosY').value),
+subtitleFontSize: parseFloat(document.getElementById('subtitleFontSize').value),
+subtitleFont: document.getElementById('subtitleFont').value,
+monthWidth: parseInt(document.getElementById('monthWidth').value),
+monthHeight: parseInt(document.getElementById('monthHeight').value),
+monthPosX: parseInt(document.getElementById('monthPosX').value),
+monthPosY: parseInt(document.getElementById('monthPosY').value),
+monthFontSize: parseFloat(document.getElementById('monthFontSize').value),
+monthFont: document.getElementById('monthFont').value,
+yearWidth: parseInt(document.getElementById('yearWidth').value),
+yearHeight: parseInt(document.getElementById('yearHeight').value),
+yearPosX: parseInt(document.getElementById('yearPosX').value),
+yearPosY: parseInt(document.getElementById('yearPosY').value),
+yearFontSize: parseFloat(document.getElementById('yearFontSize').value),
+yearFont: document.getElementById('yearFont').value,
+numberWidth: parseInt(document.getElementById('numberWidth').value),
+numberHeight: parseInt(document.getElementById('numberHeight').value),
+numberPosX: parseInt(document.getElementById('numberPosX').value),
+numberPosY: parseInt(document.getElementById('numberPosY').value),
+numberFontSize: parseInt(document.getElementById('numberFontSize').value),
+numberFont: document.getElementById('numberFont').value,
+photoWidth: parseInt(document.getElementById('photoWidth').value),
+photoHeight: parseInt(document.getElementById('photoHeight').value),
+photoPosX: parseInt(document.getElementById('photoPosX').value),
+photoPosY: parseInt(document.getElementById('photoPosY').value),
+photoRadius: parseInt(document.getElementById('photoRadius').value),
+templateHue: parseInt(document.getElementById('templateHue').value),
+bgColor: bgColorSelect.value
+};
+history.push(currentState);
+historyIndex++;
+if (history.length > 20) { history.shift(); historyIndex--; }
+}
+
+// Undo changes
+function undoChanges() {
+if (historyIndex > 0) {
+historyIndex--;
+restoreState(history[historyIndex]);
+}
+}
+
+// Restore a state from history
+function restoreState(state) {
+nameInput.value = state.name;
+timeInput.value = state.time;
+monthInput.value = state.month;
+yearInput.value = state.year;
+numberInput.value = state.number;
+
+// Name controls
+document.getElementById('nameWidth').value = state.nameWidth;
+document.getElementById('nameWidthValue').textContent = state.nameWidth + 'px';
+document.getElementById('nameHeight').value = state.nameHeight;
+document.getElementById('nameHeightValue').textContent = state.nameHeight + 'px';
+document.getElementById('namePosX').value = state.namePosX;
+document.getElementById('namePosXValue').textContent = state.namePosX + 'px';
+document.getElementById('namePosY').value = state.namePosY;
+document.getElementById('namePosYValue').textContent = state.namePosY + 'px';
+document.getElementById('nameFontSize').value = state.nameFontSize;
+document.getElementById('nameFontSizeValue').textContent = state.nameFontSize + 'px';
+document.getElementById('nameFont').value = state.nameFont;
+
+// Subtitle controls
+document.getElementById('subtitleWidth').value = state.subtitleWidth;
+document.getElementById('subtitleWidthValue').textContent = state.subtitleWidth + 'px';
+document.getElementById('subtitleHeight').value = state.subtitleHeight;
+document.getElementById('subtitleHeightValue').textContent = state.subtitleHeight + 'px';
+document.getElementById('subtitlePosX').value = state.subtitlePosX;
+document.getElementById('subtitlePosXValue').textContent = state.subtitlePosX + 'px';
+document.getElementById('subtitlePosY').value = state.subtitlePosY;
+document.getElementById('subtitlePosYValue').textContent = state.subtitlePosY + 'px';
+document.getElementById('subtitleFontSize').value = state.subtitleFontSize;
+document.getElementById('subtitleFontSizeValue').textContent = state.subtitleFontSize + 'px';
+document.getElementById('subtitleFont').value = state.subtitleFont;
+
+// Month controls
+document.getElementById('monthWidth').value = state.monthWidth;
+document.getElementById('monthWidthValue').textContent = state.monthWidth + 'px';
+document.getElementById('monthHeight').value = state.monthHeight;
+document.getElementById('monthHeightValue').textContent = state.monthHeight + 'px';
+document.getElementById('monthPosX').value = state.monthPosX;
+document.getElementById('monthPosXValue').textContent = state.monthPosX + 'px';
+document.getElementById('monthPosY').value = state.monthPosY;
+document.getElementById('monthPosYValue').textContent = state.monthPosY + 'px';
+document.getElementById('monthFontSize').value = state.monthFontSize;
+document.getElementById('monthFontSizeValue').textContent = state.monthFontSize + 'px';
+document.getElementById('monthFont').value = state.monthFont;
+
+// Year controls
+document.getElementById('yearWidth').value = state.yearWidth;
+document.getElementById('yearWidthValue').textContent = state.yearWidth + 'px';
+document.getElementById('yearHeight').value = state.yearHeight;
+document.getElementById('yearHeightValue').textContent = state.yearHeight + 'px';
+document.getElementById('yearPosX').value = state.yearPosX;
+document.getElementById('yearPosXValue').textContent = state.yearPosX + 'px';
+document.getElementById('yearPosY').value = state.yearPosY;
+document.getElementById('yearPosYValue').textContent = state.yearPosY + 'px';
+document.getElementById('yearFontSize').value = state.yearFontSize;
+document.getElementById('yearFontSizeValue').textContent = state.yearFontSize + 'px';
+document.getElementById('yearFont').value = state.yearFont;
+
+// Number controls
+document.getElementById('numberWidth').value = state.numberWidth;
+document.getElementById('numberWidthValue').textContent = state.numberWidth + 'px';
+document.getElementById('numberHeight').value = state.numberHeight;
+document.getElementById('numberHeightValue').textContent = state.numberHeight + 'px';
+document.getElementById('numberPosX').value = state.numberPosX;
+document.getElementById('numberPosXValue').textContent = state.numberPosX + 'px';
+document.getElementById('numberPosY').value = state.numberPosY;
+document.getElementById('numberPosYValue').textContent = state.numberPosY + 'px';
+document.getElementById('numberFontSize').value = state.numberFontSize;
+document.getElementById('numberFontSizeValue').textContent = state.numberFontSize + 'px';
+document.getElementById('numberFont').value = state.numberFont;
+
+// Photo controls
+document.getElementById('photoWidth').value = state.photoWidth;
+document.getElementById('photoWidthValue').textContent = state.photoWidth + 'px';
+document.getElementById('photoHeight').value = state.photoHeight;
+document.getElementById('photoHeightValue').textContent = state.photoHeight + 'px';
+document.getElementById('photoPosX').value = state.photoPosX;
+document.getElementById('photoPosXValue').textContent = state.photoPosX + 'px';
+document.getElementById('photoPosY').value = state.photoPosY;
+document.getElementById('photoPosYValue').textContent = state.photoPosY + 'px';
+document.getElementById('photoRadius').value = state.photoRadius;
+document.getElementById('photoRadiusValue').textContent = state.photoRadius + 'px';
+
+// Template and big photo controls
+document.getElementById('templateHue').value = state.templateHue;
+document.getElementById('templateHueValue').textContent = state.templateHue + '°';
+
+// Background color control
+bgColorSelect.value = state.bgColor;
+
+// Apply restored values to elements
+updateNameDisplay();
+updateSubtitleDisplay();
+updateMonthDisplay();
+updateYearDisplay();
+updateNumberDisplay();
+updateNameWidth(state.nameWidth);
+updateNameHeight(state.nameHeight);
+updateNamePosition(state.namePosX, 'x');
+updateNamePosition(state.namePosY, 'y');
+updateNameFontSize(state.nameFontSize);
+updateNameFont(state.nameFont);
+
+updateSubtitleWidth(state.subtitleWidth);
+updateSubtitleHeight(state.subtitleHeight);
+updateSubtitlePosition(state.subtitlePosX, 'x');
+updateSubtitlePosition(state.subtitlePosY, 'y');
+updateSubtitleFontSize(state.subtitleFontSize);
+updateSubtitleFont(state.subtitleFont);
+
+updateMonthWidth(state.monthWidth);
+updateMonthHeight(state.monthHeight);
+updateMonthPosition(state.monthPosX, 'x');
+updateMonthPosition(state.monthPosY, 'y');
+updateMonthFontSize(state.monthFontSize);
+updateMonthFont(state.monthFont);
+
+updateYearWidth(state.yearWidth);
+updateYearHeight(state.yearHeight);
+updateYearPosition(state.yearPosX, 'x');
+updateYearPosition(state.yearPosY, 'y');
+updateYearFontSize(state.yearFontSize);
+updateYearFont(state.yearFont);
+
+updateNumberWidth(state.numberWidth);
+updateNumberHeight(state.numberHeight);
+updateNumberPosition(state.numberPosX, 'x');
+updateNumberPosition(state.numberPosY, 'y');
+updateNumberFontSize(state.numberFontSize);
+updateNumberFont(state.numberFont);
+
+updatePhotoWidth(state.photoWidth);
+updatePhotoHeight(state.photoHeight);
+updatePhotoPosition(state.photoPosX, 'x');
+updatePhotoPosition(state.photoPosY, 'y');
+updatePhotoRadius(state.photoRadius);
+
+updateTemplateHue(state.templateHue);
+updateBackgroundColor(state.bgColor);
+}
+
+// Reset to defaults
+function resetToDefaults() {
+const defaultValues = {
+name: "",
+time: "1:30",
+month: "January",
+year: "2024",
+number: "",
+nameWidth: 222,
+nameHeight: 81,
+namePosX: 464,
+namePosY: 966,
+nameFontSize: 40,
+nameFont: "'Space Grotesk', sans-serif",
+subtitleWidth: 130,
+subtitleHeight: 43,
+subtitlePosX: 366,
+subtitlePosY: 500,
+subtitleFontSize: 24.8,
+subtitleFont: "'Poppins', sans-serif",
+monthWidth: 130,
+monthHeight: 43,
+monthPosX: 366,
+monthPosY: 1080,
+monthFontSize: 24.8,
+monthFont: "'Poppins', sans-serif",
+yearWidth: 130,
+yearHeight: 43,
+yearPosX: 366,
+yearPosY: 580,
+yearFontSize: 24.8,
+yearFont: "'Poppins', sans-serif",
+numberWidth: 85.62,
+numberHeight: 100.16,
+numberPosX: 464.66,
+numberPosY: 1075,
+numberFontSize: 60,
+numberFont: "'Plus Jakarta Sans', sans-serif",
+photoWidth: 318,
+photoHeight: 357,
+photoPosX: 392,
+photoPosY: 598,
+photoRadius: 10,
+templateHue: 0,
+bgColor: '#8B1F2C'
+};
+restoreState(defaultValues);
+saveState();
+}
+
+// Initialize card elements with default positions
+function initializeCardElements() {
+// Set initial positions for all elements
+cardName.style.left = originalValues.namePosX + 'px';
+cardName.style.top = originalValues.namePosY + 'px';
+cardName.style.width = originalValues.nameWidth + 'px';
+cardName.style.height = originalValues.nameHeight + 'px';
+
+cardSubtitle.style.left = originalValues.subtitlePosX + 'px';
+cardSubtitle.style.top = originalValues.subtitlePosY + 'px';
+cardSubtitle.style.width = originalValues.subtitleWidth + 'px';
+cardSubtitle.style.height = originalValues.subtitleHeight + 'px';
+
+cardMonth.style.left = originalValues.monthPosX + 'px';
+cardMonth.style.top = originalValues.monthPosY + 'px';
+cardMonth.style.width = originalValues.monthWidth + 'px';
+cardMonth.style.height = originalValues.monthHeight + 'px';
+
+cardYear.style.left = originalValues.yearPosX + 'px';
+cardYear.style.top = originalValues.yearPosY + 'px';
+cardYear.style.width = originalValues.yearWidth + 'px';
+cardYear.style.height = originalValues.yearHeight + 'px';
+
+cardNumber.style.left = originalValues.numberPosX + 'px';
+cardNumber.style.top = originalValues.numberPosY + 'px';
+cardNumber.style.width = originalValues.numberWidth + 'px';
+cardNumber.style.height = originalValues.numberHeight + 'px';
+
+photoContainer.style.left = originalValues.photoPosX + 'px';
+photoContainer.style.top = originalValues.photoPosY + 'px';
+photoContainer.style.width = originalValues.photoWidth + 'px';
+photoContainer.style.height = originalValues.photoHeight + 'px';
+photoContainer.style.borderRadius = originalValues.photoRadius + 'px';
+
+// Set initial font styles
+const nameText = cardName.querySelector('.name-text');
+nameText.style.fontSize = originalValues.nameFontSize + 'px';
+nameText.style.fontFamily = originalValues.nameFont;
+
+const subtitleText = cardSubtitle.querySelector('.subtitle-text');
+subtitleText.style.fontSize = originalValues.subtitleFontSize + 'px';
+subtitleText.style.fontFamily = originalValues.subtitleFont;
+
+const monthText = cardMonth.querySelector('.month-text');
+monthText.style.fontSize = originalValues.monthFontSize + 'px';
+monthText.style.fontFamily = originalValues.monthFont;
+
+const yearText = cardYear.querySelector('.year-text');
+yearText.style.fontSize = originalValues.yearFontSize + 'px';
+yearText.style.fontFamily = originalValues.yearFont;
+
+const numberText = cardNumber.querySelector('.number-text');
+numberText.style.fontSize = originalValues.numberFontSize + 'px';
+numberText.style.fontFamily = originalValues.numberFont;
+
+// Set initial background color
+photoCard.style.backgroundColor = originalValues.bgColor;
+}
+
+// Update name
+nameInput.addEventListener('input', updateNameDisplay);
+
+function updateNameDisplay() {
+const name = nameInput.value;
+const nameText = cardName.querySelector('.name-text');
+
+if (name) {
+nameText.textContent = name;
+} else {
+nameText.textContent = '';
+}
+}
+
+// Update time
+timeInput.addEventListener('change', updateSubtitleDisplay);
+
+function updateSubtitleDisplay() {
+const time = timeInput.value;
+const subtitleText = cardSubtitle.querySelector('.subtitle-text');
+
+if (time) {
+subtitleText.textContent = time;
+} else {
+subtitleText.textContent = '';
+}
+}
+
+// Update month
+monthInput.addEventListener('change', updateMonthDisplay);
+
+function updateMonthDisplay() {
+const month = monthInput.value;
+const monthText = cardMonth.querySelector('.month-text');
+
+if (month) {
+monthText.textContent = month;
+} else {
+monthText.textContent = '';
+}
+}
+
+// Update year
+yearInput.addEventListener('change', updateYearDisplay);
+
+function updateYearDisplay() {
+const year = yearInput.value;
+const yearText = cardYear.querySelector('.year-text');
+
+if (year) {
+yearText.textContent = year;
+} else {
+yearText.textContent = '';
+}
+}
+
+// Update number
+numberInput.addEventListener('input', updateNumberDisplay);
+
+function updateNumberDisplay() {
+const number = numberInput.value;
+const numberText = cardNumber.querySelector('.number-text');
+
+if (number) {
+numberText.textContent = number;
+} else {
+numberText.textContent = '';
+}
+}
+
+// Handle photo upload
+photoInput.addEventListener('change', (e) => {
+const file = e.target.files[0];
+if (file) {
+const reader = new FileReader();
+reader.onload = (event) => {
+photoImg.src = event.target.result;
+photoImg.style.display = 'block';
+photoPlaceholder.style.display = 'none';
+};
+reader.readAsDataURL(file);
+}
+});
+
+// Edit Modal
+function openEditModal() {
+originalValues = {
+name: nameInput.value,
+time: timeInput.value,
+month: monthInput.value,
+year: yearInput.value,
+number: numberInput.value,
+nameWidth: parseInt(document.getElementById('nameWidth').value),
+nameHeight: parseInt(document.getElementById('nameHeight').value),
+namePosX: parseInt(document.getElementById('namePosX').value),
+namePosY: parseInt(document.getElementById('namePosY').value),
+nameFontSize: parseInt(document.getElementById('nameFontSize').value),
+nameFont: document.getElementById('nameFont').value,
+subtitleWidth: parseInt(document.getElementById('subtitleWidth').value),
+subtitleHeight: parseInt(document.getElementById('subtitleHeight').value),
+subtitlePosX: parseInt(document.getElementById('subtitlePosX').value),
+subtitlePosY: parseInt(document.getElementById('subtitlePosY').value),
+subtitleFontSize: parseFloat(document.getElementById('subtitleFontSize').value),
+subtitleFont: document.getElementById('subtitleFont').value,
+monthWidth: parseInt(document.getElementById('monthWidth').value),
+monthHeight: parseInt(document.getElementById('monthHeight').value),
+monthPosX: parseInt(document.getElementById('monthPosX').value),
+monthPosY: parseInt(document.getElementById('monthPosY').value),
+monthFontSize: parseFloat(document.getElementById('monthFontSize').value),
+monthFont: document.getElementById('monthFont').value,
+yearWidth: parseInt(document.getElementById('yearWidth').value),
+yearHeight: parseInt(document.getElementById('yearHeight').value),
+yearPosX: parseInt(document.getElementById('yearPosX').value),
+yearPosY: parseInt(document.getElementById('yearPosY').value),
+yearFontSize: parseFloat(document.getElementById('yearFontSize').value),
+yearFont: document.getElementById('yearFont').value,
+numberWidth: parseInt(document.getElementById('numberWidth').value),
+numberHeight: parseInt(document.getElementById('numberHeight').value),
+numberPosX: parseInt(document.getElementById('numberPosX').value),
+numberPosY: parseInt(document.getElementById('numberPosY').value),
+numberFontSize: parseInt(document.getElementById('numberFontSize').value),
+numberFont: document.getElementById('numberFont').value,
+photoWidth: parseInt(document.getElementById('photoWidth').value),
+photoHeight: parseInt(document.getElementById('photoHeight').value),
+photoPosX: parseInt(document.getElementById('photoPosX').value),
+photoPosY: parseInt(document.getElementById('photoPosY').value),
+photoRadius: parseInt(document.getElementById('photoRadius').value),
+templateHue: parseInt(document.getElementById('templateHue').value),
+bgColor: bgColorSelect.value
+};
+saveState();
+document.getElementById('editModal').classList.add('active');
+}
+
+function closeEditModal() {
+document.getElementById('editModal').classList.remove('active');
+}
+
+function cancelEditModal() {
+restoreState(originalValues);
+document.getElementById('editModal').classList.remove('active');
+}
+
+// Template Settings
+function updateTemplateHue(value) {
+document.getElementById('templateHueValue').textContent = value + '°';
+photoCard.style.filter = `hue-rotate(${value}deg)`;
+saveState();
+}
+
+// Background Color Settings
+function updateBackgroundColor(value) {
+photoCard.style.backgroundColor = value;
+saveState();
+}
+
+// Name Settings
+function updateNameWidth(value) {
+document.getElementById('nameWidthValue').textContent = value + 'px';
+cardName.style.width = value + 'px';
+saveState();
+}
+
+function updateNameHeight(value) {
+document.getElementById('nameHeightValue').textContent = value + 'px';
+cardName.style.height = value + 'px';
+saveState();
+}
+
+function updateNamePosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('namePosXValue').textContent = value + 'px';
+cardName.style.left = value + 'px';
+} else {
+document.getElementById('namePosYValue').textContent = value + 'px';
+cardName.style.top = value + 'px';
+}
+saveState();
+}
+
+function updateNameFontSize(value) {
+document.getElementById('nameFontSizeValue').textContent = value + 'px';
+const nameElement = cardName.querySelector('.name-text');
+if (nameElement) nameElement.style.fontSize = value + 'px';
+saveState();
+}
+
+function updateNameFont(value) {
+const nameElement = cardName.querySelector('.name-text');
+if (nameElement) nameElement.style.fontFamily = value;
+saveState();
+}
+
+// Subtitle Settings
+function updateSubtitleWidth(value) {
+document.getElementById('subtitleWidthValue').textContent = value + 'px';
+cardSubtitle.style.width = value + 'px';
+saveState();
+}
+
+function updateSubtitleHeight(value) {
+document.getElementById('subtitleHeightValue').textContent = value + 'px';
+cardSubtitle.style.height = value + 'px';
+saveState();
+}
+
+function updateSubtitlePosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('subtitlePosXValue').textContent = value + 'px';
+cardSubtitle.style.left = value + 'px';
+} else {
+document.getElementById('subtitlePosYValue').textContent = value + 'px';
+cardSubtitle.style.top = value + 'px';
+}
+saveState();
+}
+
+function updateSubtitleFontSize(value) {
+document.getElementById('subtitleFontSizeValue').textContent = value + 'px';
+const subtitleElement = cardSubtitle.querySelector('.subtitle-text');
+if (subtitleElement) subtitleElement.style.fontSize = value + 'px';
+saveState();
+}
+
+function updateSubtitleFont(value) {
+const subtitleElement = cardSubtitle.querySelector('.subtitle-text');
+if (subtitleElement) subtitleElement.style.fontFamily = value;
+saveState();
+}
+
+// Month Settings
+function updateMonthWidth(value) {
+document.getElementById('monthWidthValue').textContent = value + 'px';
+cardMonth.style.width = value + 'px';
+saveState();
+}
+
+function updateMonthHeight(value) {
+document.getElementById('monthHeightValue').textContent = value + 'px';
+cardMonth.style.height = value + 'px';
+saveState();
+}
+
+function updateMonthPosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('monthPosXValue').textContent = value + 'px';
+cardMonth.style.left = value + 'px';
+} else {
+document.getElementById('monthPosYValue').textContent = value + 'px';
+cardMonth.style.top = value + 'px';
+}
+saveState();
+}
+
+function updateMonthFontSize(value) {
+document.getElementById('monthFontSizeValue').textContent = value + 'px';
+const monthElement = cardMonth.querySelector('.month-text');
+if (monthElement) monthElement.style.fontSize = value + 'px';
+saveState();
+}
+
+function updateMonthFont(value) {
+const monthElement = cardMonth.querySelector('.month-text');
+if (monthElement) monthElement.style.fontFamily = value;
+saveState();
+}
+
+// Year Settings
+function updateYearWidth(value) {
+document.getElementById('yearWidthValue').textContent = value + 'px';
+cardYear.style.width = value + 'px';
+saveState();
+}
+
+function updateYearHeight(value) {
+document.getElementById('yearHeightValue').textContent = value + 'px';
+cardYear.style.height = value + 'px';
+saveState();
+}
+
+function updateYearPosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('yearPosXValue').textContent = value + 'px';
+cardYear.style.left = value + 'px';
+} else {
+document.getElementById('yearPosYValue').textContent = value + 'px';
+cardYear.style.top = value + 'px';
+}
+saveState();
+}
+
+function updateYearFontSize(value) {
+document.getElementById('yearFontSizeValue').textContent = value + 'px';
+const yearElement = cardYear.querySelector('.year-text');
+if (yearElement) yearElement.style.fontSize = value + 'px';
+saveState();
+}
+
+function updateYearFont(value) {
+const yearElement = cardYear.querySelector('.year-text');
+if (yearElement) yearElement.style.fontFamily = value;
+saveState();
+}
+
+// Number Settings
+function updateNumberWidth(value) {
+document.getElementById('numberWidthValue').textContent = value + 'px';
+cardNumber.style.width = value + 'px';
+saveState();
+}
+
+function updateNumberHeight(value) {
+document.getElementById('numberHeightValue').textContent = value + 'px';
+cardNumber.style.height = value + 'px';
+saveState();
+}
+
+function updateNumberPosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('numberPosXValue').textContent = value + 'px';
+cardNumber.style.left = value + 'px';
+} else {
+document.getElementById('numberPosYValue').textContent = value + 'px';
+cardNumber.style.top = value + 'px';
+}
+saveState();
+}
+
+function updateNumberFontSize(value) {
+document.getElementById('numberFontSizeValue').textContent = value + 'px';
+const numberElement = cardNumber.querySelector('.number-text');
+if (numberElement) numberElement.style.fontSize = value + 'px';
+saveState();
+}
+
+function updateNumberFont(value) {
+const numberElement = cardNumber.querySelector('.number-text');
+if (numberElement) numberElement.style.fontFamily = value;
+saveState();
+}
+
+// Photo Container Settings
+function updatePhotoWidth(value) {
+document.getElementById('photoWidthValue').textContent = value + 'px';
+photoContainer.style.width = value + 'px';
+saveState();
+}
+
+function updatePhotoHeight(value) {
+document.getElementById('photoHeightValue').textContent = value + 'px';
+photoContainer.style.height = value + 'px';
+saveState();
+}
+
+function updatePhotoPosition(value, axis) {
+if (axis === 'x') {
+document.getElementById('photoPosXValue').textContent = value + 'px';
+photoContainer.style.left = value + 'px';
+} else {
+document.getElementById('photoPosYValue').textContent = value + 'px';
+photoContainer.style.top = value + 'px';
+}
+saveState();
+}
+
+function updatePhotoRadius(value) {
+document.getElementById('photoRadiusValue').textContent = value + 'px';
+photoContainer.style.borderRadius = value + 'px';
+saveState();
+}
+
+// Share Modal
+function openShareModal() {
+document.getElementById('shareModal').classList.add('active');
+}
+
+function closeShareModal() {
+document.getElementById('shareModal').classList.remove('active');
+}
+
+// Home button function
+function goHome() {
+window.location.href = 'index.html';
+}
+
+// Close modals on outside click
+document.getElementById('editModal').addEventListener('click', function(e) {
+if (e.target === this) closeEditModal();
+});
+
+document.getElementById('shareModal').addEventListener('click', function(e) {
+if (e.target === this) closeShareModal();
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+closeEditModal();
+closeShareModal();
+}
+});
+
+// Initialize
+window.addEventListener('load', () => {
+initializeCardElements();
+updateNameDisplay();
+updateSubtitleDisplay();
+updateMonthDisplay();
+updateYearDisplay();
+updateNumberDisplay();
+
+/*  ensure no stale inline colour  */
+['.subtitle-text','.month-text','.year-text']
+    .forEach(s => document.querySelector(s)?.style.removeProperty('color'));
+});
+</script>
+</body>
+</html>
