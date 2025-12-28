@@ -1538,9 +1538,35 @@ async function generateCardCanvas(){
                 tempCanvas.height = canvas.height;
                 const ctx = tempCanvas.getContext('2d');
                 
-                // Apply hue rotation filter
+                // Apply hue rotation filter to the entire canvas
                 ctx.filter = `hue-rotate(${hue}deg)`;
                 ctx.drawImage(canvas, 0, 0);
+                
+                // Get the photo container from the clone
+                const photoContainerClone = clone.querySelector('.photo-container');
+                if (photoContainerClone) {
+                    // Create a separate canvas for the photo
+                    const photoCanvas = await html2canvas(photoContainerClone, {
+                        width: parseInt(photoContainerClone.style.width),
+                        height: parseInt(photoContainerClone.style.height),
+                        scale: 2,
+                        backgroundColor: null,
+                        useCORS: true,
+                        allowTaint: false,
+                        logging: false
+                    });
+                    
+                    // Apply inverse hue rotation to the photo
+                    ctx.filter = `hue-rotate(${-hue}deg)`;
+                    
+                    // Calculate position and draw the photo
+                    const photoX = parseInt(photoContainerClone.style.left) * 2;
+                    const photoY = parseInt(photoContainerClone.style.top) * 2;
+                    const photoWidth = parseInt(photoContainerClone.style.width) * 2;
+                    const photoHeight = parseInt(photoContainerClone.style.height) * 2;
+                    
+                    ctx.drawImage(photoCanvas, photoX, photoY, photoWidth, photoHeight);
+                }
                 
                 document.body.removeChild(box);
                 hideLoading();
@@ -2255,6 +2281,7 @@ document.getElementById('editModal').classList.remove('active');
 function updateTemplateHue(value) {
 document.getElementById('templateHueValue').textContent = value + '°';
 photoCard.style.filter = `hue-rotate(${value}deg)`;
+photoContainer.style.filter = `hue-rotate(${-value}deg)`;
 saveState();
 }
 
